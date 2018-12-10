@@ -1,0 +1,44 @@
+{
+  "name": "reddit-posts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start-redux": "REACT_APP_RUN=REDUX PORT=3006 react-scripts-ts start",
+    "start-mobx": "REACT_APP_RUN=MOBX PORT=3007 react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
+  "dependencies": {
+    "connected-react-router": "5.0.1",
+    "history": "4.7.2",
+    "lodash": "4.17.11",
+    "mobx": "5.7.0",
+    "mobx-react": "5.4.2",
+    "mobx-react-router": "4.0.5",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "react-redux": "5.1.1",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
+    "react-scripts-ts": "3.1.0",
+    "redux": "4.0.1",
+    "redux-actions": "2.6.4",
+    "redux-saga": "0.16.2",
+    "semantic-ui-css": "2.4.1",
+    "semantic-ui-react": "0.83.0"
+  },
+  "devDependencies": {
+    "@types/jest": "23.3.10",
+    "@types/lodash": "4.14.118",
+    "@types/node": "10.12.12",
+    "@types/react": "16.7.13",
+    "@types/react-dom": "16.0.11",
+    "@types/react-redux": "6.0.10",
+    "@types/react-router": "4.4.1",
+    "@types/react-router-dom": "4.3.1",
+    "@types/redux-actions": "2.3.1",
+    "typescript": "3.2.1"
+  },
+  "proxy": "https://www.reddit.com/"
+}
