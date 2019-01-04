@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "tslint:recommended",
-    "tslint-react",
-    "tslint-config-prettier"
-  ],
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "defaultSeverity": "warning",
   "linterOptions": {
     "exclude": [
@@ -15,20 +11,14 @@
     ]
   },
   "rules": {
-    "array-type": [
-      true,
-      "array-simple"
-    ],
+    "array-type": [true, "array-simple"],
     "newline-per-chained-call": false,
     "no-magic-numbers": false,
     "no-parameter-reassignment": true,
     "ban-comma-operator": true,
     "no-invalid-template-strings": true,
     "no-sparse-arrays": true,
-    "prefer-conditional-expression": [
-      true,
-      "check-else-if"
-    ],
+    "prefer-conditional-expression": [true, "check-else-if"],
     "prefer-object-spread": true,
     "switch-default": true,
     "no-default-export": true,
@@ -46,12 +36,14 @@
     ],
     "ordered-imports": false, // don't check alphabetical order in imports
     "object-literal-sort-keys": false, // don't check alphabetical order in object keys
-    "curly": [ // allow one-liners like "if (!value) return []"
+    "curly": [
+      // allow one-liners like "if (!value) return []"
       true,
       "ignore-same-line"
     ],
     "interface-name": false, // don't check if interface always begins from "I"
-    "ban": [ // ban only() for describe/it and its aliases
+    "ban": [
+      // ban only() for describe/it and its aliases
       true,
       ["describe", "only"],
       ["it", "only"],
@@ -61,10 +53,12 @@
     ],
 
     "member-access": [true, "no-public"],
-    "member-ordering": [true, {"order": ["static-method", "protected-static-field"]}],
+    "member-ordering": [true, { "order": ["static-method", "protected-static-field"] }],
     "no-shadowed-variable": false,
     "no-empty-interface": false,
     "semicolon": true,
+
+    "indent": [true, "spaces", 2],
 
     // react specific checks
     "jsx-boolean-value": [true, "never"], // forbid prop like "enabled={true}" and force just "enabled"

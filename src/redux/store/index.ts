@@ -6,23 +6,17 @@ import { rootReducer, State } from './reducers';
 import { rootSaga } from './sagas';
 
 export const configureStore = () => {
-    const sagaMiddleware = createSagaMiddleware();
-    const history = createBrowserHistory();
+  const sagaMiddleware = createSagaMiddleware();
+  const history = createBrowserHistory();
 
-    const middlewares = [
-        sagaMiddleware,
-        routerMiddleware(history)
-    ];
+  const middlewares = [sagaMiddleware, routerMiddleware(history)];
 
-    const store = createStore<State, AnyAction, {}, {}>(
-        rootReducer(history),
-        compose(applyMiddleware(...middlewares))
-    );
+  const store = createStore<State, AnyAction, {}, {}>(rootReducer(history), compose(applyMiddleware(...middlewares)));
 
-    sagaMiddleware.run(rootSaga);
-  
-    return {
-        store, 
-        history
-    };
+  sagaMiddleware.run(rootSaga);
+
+  return {
+    store,
+    history
+  };
 };

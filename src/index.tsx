@@ -16,12 +16,9 @@ renderApp();
 document.title = `${REACT_APP_RUN} App`;
 
 if ((module as any).hot) {
-	(module as any).hot.accept(appPath, renderApp);
+  (module as any).hot.accept(appPath, renderApp);
 }
 
 function renderApp() {
-	ReactDOM.render(
-		React.createElement(App),
-		document.getElementById('root')
-	);
+  ReactDOM.render(React.createElement(App), document.getElementById('root'));
 }

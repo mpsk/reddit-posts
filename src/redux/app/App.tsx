@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
@@ -8,13 +8,13 @@ import { configureStore } from 'redux/store';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 
-const { store, history }  = configureStore();
+const { store, history } = configureStore();
 Object.assign(window, { store });
 
 export const App = () => (
-	<Provider store={store}>
-		<ConnectedRouter history={history}>
-			<Route component={MainContainer} />
-		</ConnectedRouter>
-	</Provider>
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <Route component={MainContainer} />
+    </ConnectedRouter>
+  </Provider>
 );

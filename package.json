@@ -7,7 +7,14 @@
     "start-mobx": "REACT_APP_RUN=MOBX PORT=3007 react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "tslint": "tslint --project tsconfig.tslint.json --config tslint.prod.json --format stylish"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "prettier --write",
+      "tslint --fix --config tslint.prod.json --format stylish",
+      "git add"
+    ]
   },
   "dependencies": {
     "connected-react-router": "5.0.1",
@@ -38,6 +45,7 @@
     "@types/react-router": "4.4.1",
     "@types/react-router-dom": "4.3.1",
     "@types/redux-actions": "2.3.1",
+    "prettier": "1.15.3",
     "typescript": "3.2.1"
   },
   "proxy": "https://www.reddit.com/"
