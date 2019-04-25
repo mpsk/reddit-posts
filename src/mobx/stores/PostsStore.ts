@@ -1,4 +1,4 @@
-import { observable, action, IObservableArray, flow, computed, toJS, observe } from 'mobx';
+import { observable, action, IObservableArray, flow } from 'mobx';
 import { RedditService, RedditReqPosts } from 'services/RedditService';
 import { IPostItem } from 'types';
 
