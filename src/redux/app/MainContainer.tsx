@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { PostsContainer } from 'redux/components/PostsContainer';
-import { TopMenuContainer } from 'redux/components/TopMenuContainer';
+import { PostsContainer } from 'redux/containers/PostsContainer';
+import { TopMenuContainer } from 'redux/containers/TopMenuContainer';
 import { ROUTES } from 'routes';
 
 export const MainContainer = () => {

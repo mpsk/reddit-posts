@@ -11,7 +11,8 @@ export enum PostsActions {
   REQUEST_SUBREDDIT_POSTS_COMPLETE = 'REQUEST_SUBREDDIT_POSTS_COMPLETE',
   REQUEST_SUBREDDIT_POSTS_FAIL = 'REQUEST_SUBREDDIT_POSTS_FAIL',
 
-  HIDE_POST = 'HIDE_POST'
+  HIDE_POST = 'HIDE_POST',
+  RESET_HIDDEN_POSTS = 'RESET_HIDDEN_POSTS'
 }
 
 export interface PostsActionsPayload {
@@ -41,5 +42,7 @@ export const posts = {
   }),
   requestSubredditPostsFail: (error: any) => ({ type: PostsActions.REQUEST_SUBREDDIT_POSTS_FAIL, error }),
 
-  hidePost: (id: string) => ({ type: PostsActions.HIDE_POST, payload: { id } })
+  hidePost: (id: string) => ({ type: PostsActions.HIDE_POST, payload: { id } }),
+
+  resetHiddenPosts: () => ({ type: PostsActions.RESET_HIDDEN_POSTS })
 };

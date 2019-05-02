@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { match, RouteComponentProps } from 'react-router';
 import { List, Loader } from 'semantic-ui-react';
 import { RedditReqPosts } from 'services/RedditService';
@@ -10,19 +10,23 @@ export interface PostsProps {
   posts: IPostItem[];
   pathname: string;
   isFetchingPosts: boolean;
-  getPosts(path: RedditReqPosts, match: match): void;
+  getPosts(path: RedditReqPosts, subreddit: string): void;
   onItemHideClick(id: string): void;
   onItemSubRedditClick(subreddit: string): void;
 }
 
-export class Posts extends React.Component<PostsProps & RouteComponentProps> {
-  componentWillMount() {
-    this.props.getPosts(this.props.pathname as RedditReqPosts, this.props.match);
+const getSubreddit = (match: match<{ subreddit?: string }>): string => {
+  return match.params ? match.params.subreddit || '' : '';
+};
+
+export class Posts extends React.PureComponent<PostsProps & RouteComponentProps<{ subreddit?: string }>> {
+  componentDidMount() {
+    this.props.getPosts(this.props.pathname as RedditReqPosts, getSubreddit(this.props.match));
   }
 
   componentWillUpdate(nextProps: PostsProps & RouteComponentProps) {
     if (this.props.pathname !== nextProps.pathname) {
-      this.props.getPosts(nextProps.pathname as RedditReqPosts, nextProps.match);
+      this.props.getPosts(nextProps.pathname as RedditReqPosts, getSubreddit(nextProps.match));
     }
   }
 

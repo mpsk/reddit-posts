@@ -4,11 +4,12 @@ import { Menu, Button } from 'semantic-ui-react';
 export interface TopMenuProps {
   activePath: string;
   hiddenPostsCount: number;
+  resetHiddenPosts(): void;
   onClickPath(path: string): void;
   onBack(): void;
 }
 
-export const TopMenu: React.SFC<TopMenuProps> = (props) => {
+export const TopMenu: React.SFC<TopMenuProps> = ({ resetHiddenPosts, ...props }) => {
   const handleItemClick = (path: string) => () => props.onClickPath(path);
   const isActive = (path: string) => !!props.activePath.match(path);
 
@@ -24,7 +25,7 @@ export const TopMenu: React.SFC<TopMenuProps> = (props) => {
       <Menu.Item name="top" active={isActive('/top')} onClick={handleItemClick('/top')} />
       {subreddit && <Menu.Item children={<b>Subbreddit: {subreddit}</b>} active />}
       <Menu.Menu position="right">
-        <Menu.Item>Hidden posts: {props.hiddenPostsCount}</Menu.Item>
+        <Menu.Item onClick={resetHiddenPosts}>Hidden posts: {props.hiddenPostsCount}</Menu.Item>
       </Menu.Menu>
     </Menu>
   );

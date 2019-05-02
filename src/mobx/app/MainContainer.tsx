@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { PostsContainer } from 'mobx/components/PostsContainer';
-import { TopMenuContainer } from 'mobx/components/TopMenuContainer';
+import { PostsContainer } from 'mobx/containers/PostsContainer';
+import { TopMenuContainer } from 'mobx/containers/TopMenuContainer';
 import { ROUTES } from 'routes';
 
 export const MainContainer = () => {
